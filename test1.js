@@ -1,3 +1,7 @@
-tables = document.getElementsByTagName('table').getElementsByTagName('tr')[0].getElementsByTagName('td')[1].getElementsByTagName('a').click();
+var tables = document.getElementsByTagName('table')
+var row = table.getElementsByTagName('tr')[0]
+var columns = row.getElementsByTagName('td')[1]
+var a = getElementsByTagName('a');
+a.click();
 
 console.log(tables);
