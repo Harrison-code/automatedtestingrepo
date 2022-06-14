@@ -5,3 +5,19 @@ function getElementByXpath(path) {
 console.log( getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/table/tbody/tr/td[2]/span/span[2]/a") );
 
 getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/table/tbody/tr/td[2]/span/span[2]/a").click();
+
+(function() {
+
+    var alvo = getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/table/tbody/tr/td[2]/span/span[2]/a");
+    var observer = new MutationObserver(fnCheckChanges);
+    observer.observe(alvo, { attributes: true, characterData: true, childList: true, subtree: true });
+
+})();
+
+function fnCheckChanges(changes, observer) {
+
+    // your code here
+
+    console.log('page changed');
+
+}
