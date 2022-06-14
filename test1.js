@@ -1,3 +1,3 @@
-tables = getElementByTagName('table');
+tables = document.getElementsByTagName('table');
 
 console.log(tables);
