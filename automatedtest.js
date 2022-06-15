@@ -8,9 +8,9 @@ getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/table/tb
 
 
 const observer = new MutationObserver(entries => {
-    console.log(entries);
+    console.log("Entries ni", entries);
 });
 
 const alvo = document.querySelector("#app > main > div.vue-portal-target > div > div > div > div.pt-5.p-6.bg-white.dark\\:bg-gray-700.shadow.relative");
-console.log(alvo);
+console.log("Docu ni ",alvo);
 // observer.observe(alvo, { attributes: true, characterData: true, childList: true, subtree: true });
