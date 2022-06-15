@@ -7,10 +7,16 @@ console.log( getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]
 getElementByXpath("/html/body/div[1]/main/div[2]/div/div/div/div[2]/div/table/tbody/tr/td[2]/span/span[2]/a").click();
 
 
-const observer = new MutationObserver(entries => {
-    console.log("Entries ni", entries);
-});
-
-const alvo = document.querySelector("#app > main > div.vue-portal-target > div > div > div > div.pt-5.p-6.bg-white.dark\\:bg-gray-700.shadow.relative");
-console.log("Docu ni ",alvo);
-// observer.observe(alvo, { attributes: true, characterData: true, childList: true, subtree: true });
+const observer = new MutationObserver((mutations, obs) => {
+    const hello = getElementByXpath("/html/body/div[1]/main/div[4]/div/div/div/div[2]/section/div/div/div[2]/div/div[1]/table/tr/td[1]/strong");
+    if (hello) {
+      console.log(hello.innerText)
+      obs.disconnect();
+      return;
+    }
+  });
+  
+  observer.observe(document, {
+    childList: true,
+    subtree: true
+  });
